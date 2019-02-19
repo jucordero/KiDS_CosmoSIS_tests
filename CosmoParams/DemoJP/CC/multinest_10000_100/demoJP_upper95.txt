@@ -1,0 +1,10 @@
+#parameter upper95
+
+#demoJP.txt
+cosmological_parameters--h0     0.81621
+cosmological_parameters--ombh2     0.0257022
+cosmological_parameters--omch2     0.808889
+cosmological_parameters--sigma8_input     0.423
+intrinsic_alignment_parameters--a     1.43968
+post     -84.1342
+weight     0.00276649

@@ -1,0 +1,17 @@
+#param1  param2  area figure_of_merit
+#demoJP.txt
+cosmological_parameters--omega_m  cosmological_parameters--ombh2  0.00266042947948  375.879160757
+cosmological_parameters--h0  cosmological_parameters--ombh2  0.00885066934518  112.985804915
+cosmological_parameters--h0  cosmological_parameters--omega_m  0.141728137909  7.05576193092
+cosmological_parameters--sigma8_input  cosmological_parameters--ombh2  0.00624343318603  160.168287256
+cosmological_parameters--sigma8_input  cosmological_parameters--omega_m  0.000831065451437  1203.27466179
+cosmological_parameters--sigma8_input  cosmological_parameters--h0  0.289886312148  3.44962820973
+cosmological_parameters--n_s  cosmological_parameters--ombh2  0.00435321830994  229.715104735
+cosmological_parameters--n_s  cosmological_parameters--omega_m  0.00291120593595  343.500261404
+cosmological_parameters--n_s  cosmological_parameters--h0  0.192580481753  5.19263422179
+cosmological_parameters--n_s  cosmological_parameters--sigma8_input  0.00829446829109  120.562278968
+intrinsic_alignment_parameters--a  cosmological_parameters--ombh2  0.0319807244764  31.2688350991
+intrinsic_alignment_parameters--a  cosmological_parameters--omega_m  0.0155063986488  64.4895067288
+intrinsic_alignment_parameters--a  cosmological_parameters--h0  2.09690562243  0.476893184559
+intrinsic_alignment_parameters--a  cosmological_parameters--sigma8_input  0.0730143907607  13.6959302075
+intrinsic_alignment_parameters--a  cosmological_parameters--n_s  0.0525297259035  19.0368402424

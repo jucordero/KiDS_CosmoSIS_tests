@@ -1,0 +1,12 @@
+#param1  param2  area figure_of_merit
+#demoJP.txt
+cosmological_parameters--ombh2  cosmological_parameters--h0  1.49516278e-06  668823.497598
+cosmological_parameters--omch2  cosmological_parameters--h0  5.60694053112e-06  178350.384572
+cosmological_parameters--omch2  cosmological_parameters--ombh2  4.65686181898e-07  2147368.8481
+cosmological_parameters--sigma8_input  cosmological_parameters--h0  9.25389237899e-06  108062.635597
+cosmological_parameters--sigma8_input  cosmological_parameters--ombh2  2.00802486688e-06  498001.800921
+cosmological_parameters--sigma8_input  cosmological_parameters--omch2  1.29437272647e-05  77257.4992928
+intrinsic_alignment_parameters--a  cosmological_parameters--h0  3.92429370438e-05  25482.2924921
+intrinsic_alignment_parameters--a  cosmological_parameters--ombh2  5.93587294902e-06  168467.217642
+intrinsic_alignment_parameters--a  cosmological_parameters--omch2  3.97071965722e-05  25184.351612
+intrinsic_alignment_parameters--a  cosmological_parameters--sigma8_input  2.98147720904e-06  335404.20734

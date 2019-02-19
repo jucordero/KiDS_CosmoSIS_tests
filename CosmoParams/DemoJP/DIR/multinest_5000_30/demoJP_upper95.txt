@@ -1,0 +1,9 @@
+#parameter upper95
+
+#demoJP.txt
+cosmological_parameters--omega_m     0.847679
+cosmological_parameters--h0     0.997629
+cosmological_parameters--sigma8_input     0.575326
+intrinsic_alignment_parameters--a     2.24369
+post     -84.9401
+weight     0.0110161

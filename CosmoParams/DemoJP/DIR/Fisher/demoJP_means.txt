@@ -1,0 +1,6 @@
+#cosmological_parameters--omega_m    cosmological_parameters--h0    cosmological_parameters--sigma8_input    intrinsic_alignment_parameters--a
+#demoJP.txt
+cosmological_parameters--omega_m   3.150000e-01   9.418442e-02
+cosmological_parameters--h0   6.731000e-01   1.269815e-01
+cosmological_parameters--sigma8_input   8.200000e-01   1.373944e-01
+intrinsic_alignment_parameters--a   0.000000e+00   3.802729e-01

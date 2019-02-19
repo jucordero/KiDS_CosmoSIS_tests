@@ -1,0 +1,3 @@
+#logz    logz_sigma
+#demoJP.txt
+-9.486453e+01    2.316271e-01

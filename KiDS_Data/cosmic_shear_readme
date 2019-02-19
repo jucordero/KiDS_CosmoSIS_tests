@@ -1,0 +1,151 @@
+KiDS-450 Tomographic Cosmic Shear Data release
+
+Tarball Download: http://kids.strw.leidenuniv.nl/cs2016/KiDS-450_COSMIC_SHEAR_DATA_RELEASE.tar.gz
+
+This tarball contains:
+
+1) The Data Vector (tomographic two-point correlation function)
+2) The Covariance Matrix 
+3) The redshift distribution (with 1000 realisations for error analyses) 
+4) The CC redshift distribution (uncorrelated errors only; if you would like to access the bootstrap realisations please contact us)
+
+This README contains all the relevant information about the structure and ordering of the various data files.  Please read Hildebrandt & Viola et al 2016 (hereafter HV16) for the details of the KiDS-450 cosmic shear analysis.
+
+In addition to this cosmological data release that allows you to explore the data in full, you can also download the published Monte Carlo Markov Chain from http://kids.strw.leidenuniv.nl/cs2016/MCMC_README.html
+
+=========================================
+
+Acknowledgements:
+Users of these data should include the following acknowledgment to the source of the data:
+
+"Based on data products from observations made with ESO Telescopes at the La Silla Paranal Observatory under programme IDs 177.A-3016, 177.A-3017 and 177.A-3018."
+
+and should cite Hildebrandt et al. (2016), Fenech Conti et al. (2016) and accompanying papers as follows:
+
+We use cosmic shear measurements from the Kilo-Degree Survey (Kuijken et al. 2015, Hildebrandt et al. 2016, Fenech Conti et al. 2016), hereafter referred to as KiDS. The KiDS data are processed by THELI (Erben et al. 2013) and Astro-WISE (Begeman et al. 2013, de Jong et al 2015). Shears are measured using lensfit (Miller et al. 2013), and photometric redshifts are obtained from PSF-matched photometry and calibrated using external overlapping spectroscopic surveys (see Hildebrandt et al. 2016).
+
+=========================================
+The contents of the KIDS-450 Data Release
+=========================================
+
+1) The Data Vector:
+
+We provide two alternative file formats for the user which we hope will alleviate any confusion arising from the different angular scales used for the xi_+ and xi_- statistics.
+
+Option 1) 130 point data vector used in the KiDS-450 analysis
+
+DATA_VECTOR/KiDS-450_xi_pm_tomographic_data_vector.dat
+
+File format:
+#   i theta(i)' xip/m(i)(p=1 m=2) itomo jtomo
+
+Example line:
+ 116  103.300    0.21173E-05   2   3   4
+
+In this example the 116th data point is the measurement of xi_-(theta=103.300 arcmin)=0.21173E-05 from cross-correlating tomographic bins 3 and 4.
+
+The vector order runs with xi_+ first, then xi_- for tomographic bin combination 1,1.  We then move on to tomographic bin combination 1,2 with xi_+ first and then xi_-.  Be aware that the selected theta scales differ for xi_+ and xi_-.
+
+
+Option 2) Measurements at all scales for all tomographic bin combinations, for the user to order as they choose
+
+DATA_VECTOR/KIDS-450_xi_pm_files/KiDS-450_xi_pm_tomo_*_$_logbin_mcor.dat
+ 
+File format:
+#   theta(arcmin)  xip  xim 
+
+There is a separate file for each tomographic bin combination *, $
+
+When using these files, please be aware that we recommend applying the following angular selection;
+
+1) Remove xip for angular scales theta>72 arcmin (i.e the last two data points in each file)
+2) Remove xim for angular scales theta<8.6arcmin (i.e the first four data points in each file)
+
+For further information on angular scale selection see the start of section 6 in HV16.
+
+The shear calibration correction derived in Fenech Conti et al. 2016 has been applied to all files in the DATA_VECTOR directory
+=========================================
+
+2) The Covariance Matrix
+
+In this data release we present the analytical covariance matrix described in Section 5.3 of HV16 and Joachimi et al in prep.   As this is a noise-free analytical covariance, you should *not* apply any `Hartlap' noise bias correction when you invert the matrix or account for noise in the matrix by using the `Sellentin & Heavens' likelihood analysis, for example.
+
+We provide two alternative file formats for the covariance matrix; 
+
+Option 1)  130x130 covariance matrix used in the KiDS-450 analysis
+
+COV_MAT/xipmcutcov_KiDS-450_analytic_inc_m.dat
+
+File format:
+#i j Cov(i,j)
+
+The ordering of the matrix follows the ordering of the vector from Option 1 above.  This file includes the additional uncertainty from the shear calibration correction (i.e equation 12 in HV16).
+
+
+Option 2) Super-user: all scales covariance matrix in list format
+
+COV_MAT/Cov_mat_all_scales.txt
+
+This version allows the user to select scales and order the data vector as they choose.  It also allows the user to separate the Gaussian, shape noise and non-gaussian components of the covariance matrix.
+
+Be aware that the uncertainty from the shear calibration correction (i.e equation 12 in HV16) has not been applied to this version.  If used in a cosmological analysis with the KiDS-450 data vector (from Option 2 above) this additional uncertainty needs to be included in your analysis.
+
+File format:
+col.  meaning
+1     signal 1, redshift bin 1
+2     signal 1, redshift bin 2
+3     signal 1, 0: xi_+; 1: xi_-
+4     signal 1, angular separation bin centre [arcmin]
+5     signal 2, redshift bin 1
+6     signal 2, redshift bin 2
+7     signal 2, 0: xi_+; 1: xi_-
+8     signal 2, angular separation bin centre [arcmin]
+9     covariance element, Gaussian (disconnected) contribution + shape noise
+10    covariance element, Non-gaussian in-survey (trispectrum) contribution
+11    covariance element, Super-sample covariance
+
+To get full covariance, add cols. 9, 10 and 11. 
+Note that only the upper triangular part of the covariance is listed.
+
+=========================================
+
+3) The DIR redshift distributions
+
+In this data release we present the redshift distributions using the weighted direct spectroscopic calibration (DIR) as described in Section 3.2 of HV16.  These are histograms with bin width of 0.05.  The quoted redshift of the bin is the lower of the bin boundary, not the centre.
+
+Nz_DIR/Nz_DIR_Mean/Nz_DIR_z*t$.asc
+
+File format: # z N(z) err_N(z)
+
+Tomographic bin 1: Nz_DIR_z0.1t0.3.asc
+Tomographic bin 2: Nz_DIR_z0.3t0.5.asc
+Tomographic bin 3: Nz_DIR_z0.5t0.7.asc
+Tomographic bin 4: Nz_DIR_z0.7t0.9.asc
+
+
+In section 6.3 of HV16 we describe how we include uncertainty on the redshift distribution in our cosmological parameter likelihood analysis by running multiple chains for different realisations of the redshift distribution that are correlated between tomographic bins.  We make 1000 of these realisations also available as part of this release.
+
+Nz_DIR/Nz_DIR_Bootstrap/Nz_z*t$_boot&_DIR.asc
+
+File format: # z N(z) 
+
+In order to include the correct correlated error between the tomographic bins, use the same `boot&' realisation for each of the four tomographic bins *,$
+
+=========================================
+
+4) The CC redshift distributions
+
+Similar to the mean DIR redshift distributions we also present the CC redshift distributions which are based on a cross-correlation analysis between the KiDS photometric catalogue and the zCOSMOS and DEEP2 spectroscopic catalogues. The files are:
+
+Nz_CC_z0.1t0.3.asc
+Nz_CC_z0.3t0.5.asc
+Nz_CC_z0.5t0.7.asc
+Nz_CC_z0.7t0.9.asc
+
+The format is the same as for the mean DIR distributions. Note though that the binning is different.
+
+=========================================
+
+If you have any questions or queries about this data release, please do not hesitate to contact
+Hendrik Hildebrandt (hendrik@astro.uni-bonn.de) and Massimo Viola (viola@strw.leidenuniv.nl).
+

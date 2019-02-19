@@ -1,0 +1,9 @@
+#parameter mean std_dev
+#demoJP.txt
+cosmological_parameters--h0   7.740322e-01   3.882365e-02
+cosmological_parameters--ombh2   2.276059e-02   1.942653e-03
+cosmological_parameters--omch2   5.969297e-01   1.490084e-01
+cosmological_parameters--sigma8_input   2.714094e-01   6.911430e-02
+intrinsic_alignment_parameters--a   8.456388e-01   3.730599e-01
+post   -8.579939e+01   1.390870e+00
+weight   2.177640e-03   5.673368e-04

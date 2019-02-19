@@ -1,0 +1,8 @@
+#param1  param2  area figure_of_merit
+#demoJP.txt
+cosmological_parameters--h0  cosmological_parameters--omega_m  8.29906218665e-05  12049.5542449
+cosmological_parameters--sigma8_input  cosmological_parameters--omega_m  1.29891679276e-05  76987.2254769
+cosmological_parameters--sigma8_input  cosmological_parameters--h0  0.000183530620983  5448.68204905
+intrinsic_alignment_parameters--a  cosmological_parameters--omega_m  0.00358306188595  279.090909348
+intrinsic_alignment_parameters--a  cosmological_parameters--h0  0.00652175907754  153.332864356
+intrinsic_alignment_parameters--a  cosmological_parameters--sigma8_input  0.00815637597268  122.603470383
